@@ -1,9 +1,4 @@
 trigger:
-- task: InstallSSHKey@0
-  inputs:
-    knownHostsEntry: 'github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
-    sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCm7A8STmYHdsy1Ka9Kjnu64hylelvI4fzyFA/989jrsbQ0pg1JpCpTdXfahUUScpjSmNmdx8EZtVSZgERrOPkFach6/FFP/yuGB9HYQ3Fr4dpBxqmyyzC+ECOG7ISfFUMV47JBojzFvu47fdV8Q+phmCo41caPXMLWYYvta0ta2xFa4SM9o2zcDBbk4XLYxqazOtbvuBwF4OLIoTOPNj9ge9KX0snShprA+6AQXJPbUiUXl1e/ABq7oTZyw0NwgYQA14PD4T09aiY7jNX4qC0PlRBZo1wXs3rQ0krm5A6rOp/G/1exh0c152ndjyJbkTtqU2h3L4fsGtdgkL7fl0TD katy@cc-67cac3a2-65966576b5-pwmxt'
-    sshKeySecureFile: 'b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABFwAAAAdzc2gtcn NhAAAAAwEAAQAAAQEApuwPEk5mB3bMtSmvSo57uuIcpXpbyOH88hQP/fPY67G0NKYNSaQq U3V32oVFEnKY0pjZncfBGbVUmYBEazj5BWnIevxRT/8rhgfR2ENxa+HaQcapssswvhAjhu yEnxVDFeOyQaI8xb7uO33VfEPqYZgqONXGj1zC1mGL7WtLWtsRWuEjPaNs3AwW5OFy2Mam szrW77gcBeDiyKEzjzY/YHvSl9LJ0oaawPugEFyT21IlF5dXvwAau6E2csNDcIGEANeDw+ E9PWomO4zV+KgtD5UQWaNcF7N60NJK5uQOqzqfxv9XsYdHNedp3Y8iW5E7alNody+H7BrX YJC+35dEwwAAA9gZaD3SGWg90gAAAAdzc2gtcnNhAAABAQCm7A8STmYHdsy1Ka9Kjnu64h ylelvI4fzyFA/989jrsbQ0pg1JpCpTdXfahUUScpjSmNmdx8EZtVSZgERrOPkFach6/FFP /yuGB9HYQ3Fr4dpBxqmyyzC+ECOG7ISfFUMV47JBojzFvu47fdV8Q+phmCo41caPXMLWYY vta0ta2xFa4SM9o2zcDBbk4XLYxqazOtbvuBwF4OLIoTOPNj9ge9KX0snShprA+6AQXJPb UiUXl1e/ABq7oTZyw0NwgYQA14PD4T09aiY7jNX4qC0PlRBZo1wXs3rQ0krm5A6rOp/G/1 exh0c152ndjyJbkTtqU2h3L4fsGtdgkL7fl0TDAAAAAwEAAQAAAQBwBt3Wm2c+eyzIKUHL 9/RyaG5xYL1ZBNKOZYiWF6HuDUW0T/16/wKpIJ1fuzGwP9jw/kSO8BFY/6nXm45Pp9z5FR XH9K9d0ROU0Iq1ag4lKV8h5gLeTCBabtppIzOe0NZFSpvIEOpYjNu2ca1lyO70sPslSdQJ Q2hAGRegL/JS9r4eoG9y8xUdMDxg7k9WFMrvSatT9TjlO1WDdbnjsgB/kYpyZ5Oul5L6tR nkPrE4PJvU/8AMluZsqLAY167NV5kwncwepsjZN8lOmNcudkzc2B3cnkGRmZbM+1EXBTQ6 YuQ/1MV9FP0pxZOBsKox03wOQ3T78RMsr7zsE2/cIgOBAAAAgQCJkNYNUnNAf7Y21IzJUk Rj2snq2SoVcts1Kd45ykhliQOkY0JWnJl7yPWbyUarg/s8M+9j+rX2NysIy2v6cM3LBVo/ stSc9lO9G4xtuGhqRsFYHy3jOqSdYW9znroHe60lYh0B5zWNxhVFedI2Nx0SKMaigALcVR FGtauniCKCqQAAAIEA0a33qd/L/zOqxRQ+C6CkXAq7mDbSK6OEfjG9qWrmLf7atkgVCcQb 0mB7wdwyaLEf82YU1yA4UsjaAc2UIe211ttgkyWJaKQDB/ewa10RSMgzir7sveyrrU+zif 70lQzUHWG0DrM4gVKznoIg3J1ccZR/+/GrXah7EcDhoQ4boAUAAACBAMvMBirvkSpTstdZ YFoQKM3wvC4RFYtIcpZTNv6t4cikS3h7Z6rhjv/F3YZVLI7ccxQSA0O86ZFbRPFmd0ITSb qx2ylCUaP88xHvejqy+ngkhfbo3h0BPuI7owB/IimggDhApL9ARa4l3RxtMXxkimHl2J64 JBDC0Mr0zEnGk5QnAAAAIWthdHlAY2MtNjdjYWMzYTItNjU5NjY1NzZiNS1wd214dAE='
   branches:
     include:
     - main
@@ -139,13 +134,6 @@ stages:
       environment: 'WEBAPP-TEST'
       strategy:
         runOnce:
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
-    appType: 'webAppLinux'
-    WebAppName: 
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
           deploy:
             steps:
             - task: AzureWebApp@1
