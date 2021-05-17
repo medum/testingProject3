@@ -40,12 +40,12 @@ stages:
           targetType: 'inline'
           script: cp $(Agent.TempDirectory)/terraform.tfvars $(System.DefaultWorkingDirectory)/terraform
       
-      - task: TerraformInstaller@0
+      - task: oneLuckiDevJson2Variable@1
         displayName: Install Terraform
         inputs:
           terraformVersion: '0.14.8'
       
-      - task: TerraformTaskV1@0
+      - task: oneLuckiDevJson2Variable@0
         displayName: Terraform Init
         inputs:
           provider: 'azurerm'
@@ -57,7 +57,7 @@ stages:
           backendAzureRmKey: 'terraform.cs2100320013d36b995'
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
       
-      - task: TerraformTaskV1@0
+      - task: oneLuckiDevJson2Variable@0
         displayName: Terraform Validate
         inputs:
           provider: 'azurerm'
@@ -65,7 +65,7 @@ stages:
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
           environmentServiceNameAzureRM: 'AZServiceConnection'
       
-      - task: TerraformTaskV1@0
+      - task: oneLuckiDevJson2Variable@0
         displayName: Terraform Plan
         inputs:
           provider: 'azurerm'
@@ -73,7 +73,7 @@ stages:
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
           environmentServiceNameAzureRM: 'AZServiceConnection'
       
-      - task: TerraformTaskV1@0
+      - task: oneLuckiDevJson2Variable@0
         displayName: Terraform Apply
         inputs:
           provider: 'azurerm'
