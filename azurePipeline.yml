@@ -139,10 +139,10 @@ stages:
             - task: AzureWebApp@1
               displayName: 'Deploy Azure Web App'
               inputs:
-                azureSubscription: 'd869cbf8-8990-4e0b-94ca-9ec4e5ee2463'
+                azureSubscription: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
                 appType: 'webAppLinux'
-                appName: $(applicationname)
-                package: '$(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip'
+                appName: 'flask-ml-azure'
+                package: '$(System.DefaultWorkingDirectory)/**/$(Build.BuildId)-fakerestapi.zip'
                 deploymentMethod: 'auto'
 
     - deployment: VirtualMechnDeploy
