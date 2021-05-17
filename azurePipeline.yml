@@ -40,7 +40,7 @@ stages:
           targetType: 'inline'
           script: cp $(Agent.TempDirectory)/terraform.tfvars $(System.DefaultWorkingDirectory)/terraform
       
-      - task: oneLuckiDevJson2Variable@1
+      - task: Cache@2
         displayName: Install Terraform
         inputs:
           terraformVersion: '0.14.8'
