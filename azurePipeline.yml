@@ -5,19 +5,18 @@ trigger:
   paths:
     exclude:
     - README.md
-    - .gitignore
-    - images/
 
-name: Azure Pipelines
+
+name: CICD Pipelines
 variables:
   python.version: "3.7.6"
   applicationname: 'jc-test2-AppService'
 stages:
   - stage: ProvisionIaC
-    displayName: Azure Resources Provisioning
+    displayName: CICD Resources 
     jobs:
-    - job: Provision_Azure_IaC
-      displayName: Provision Azure IaC
+    - job: Azure_IaC
+      displayName: Azure IaC
       pool:
         vmImage: 'ubuntu-18.04'
       steps:
@@ -32,11 +31,11 @@ stages:
         displayName: Security Access
         inputs:
           knownHostsEntry: 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
-          sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCxk0N0whzgiOTrcAdHsjgfCr4+LkO7D2mo9/dDJ+Nz/wf2c+V8HYy0U4xXGoYSbGBCfjHNZzj7vmHP3nhNMabWVALOjjGDyTnb/F+hkpiwfp6vwXjjrLcyvoFv9J8VnPZXVMuA2vveVckkrAbo+a2/u425v55KWkqqNuzJIDEVT8/1FJefaE6LK/NMo1zswlGUxDn2+o2pEDGRc2S/2B/s9I0RVPFpaqVFWNnF/JmtOhetWhwZbHvXof3tXcIo6LzY2NET3FyES5TlOMhLdJaKWssAGsZfM8Nfo92yZ0LNAk8V2o4S8RCFYIiABi5yvxs4N1/Cz4uEbqnF/wF+t4N5'
+          sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCm7A8STmYHdsy1Ka9Kjnu64hylelvI4fzyFA/989jrsbQ0pg1JpCpTdXfahUUScpjSmNmdx8EZtVSZgERrOPkFach6/FFP/yuGB9HYQ3Fr4dpBxqmyyzC+ECOG7ISfFUMV47JBojzFvu47fdV8Q+phmCo41caPXMLWYYvta0ta2xFa4SM9o2zcDBbk4XLYxqazOtbvuBwF4OLIoTOPNj9ge9KX0snShprA+6AQXJPbUiUXl1e/ABq7oTZyw0NwgYQA14PD4T09aiY7jNX4qC0PlRBZo1wXs3rQ0krm5A6rOp/G/1exh0c152ndjyJbkTtqU2h3L4fsGtdgkL7fl0TD katy@cc-67cac3a2-65966576b5-pwmxt'
           sshKeySecureFile: 'id_rsa'
       
       - task: Bash@3
-        displayName: Copy terraform.tfvars
+        displayName: Coping terraform.tfvars
         inputs:
           targetType: 'inline'
           script: cp $(Agent.TempDirectory)/terraform.tfvars $(System.DefaultWorkingDirectory)/terraform
@@ -52,10 +51,10 @@ stages:
           provider: 'azurerm'
           command: 'init'
           backendServiceArm: 'AZServiceConnection'
-          backendAzureRmResourceGroupName: 'tstate'
-          backendAzureRmStorageAccountName: 'tstate3994'
-          backendAzureRmContainerName: 'tstate'
-          backendAzureRmKey: 'terraform.tfstate'
+          backendAzureRmResourceGroupName: 'cloud-shell-storage-eastus'
+          backendAzureRmStorageAccountName: 'cs2100320013d36b995'
+          backendAzureRmContainerName: 'demo-container'
+          backendAzureRmKey: 'terraform.cs2100320013d36b995'
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
       
       - task: TerraformTaskV1@0
@@ -90,13 +89,7 @@ stages:
         pool:
           name: Hosted Ubuntu 1604
         steps:
-          #- task: InstallSSHKey@0
-          #  inputs:
-          #    knownHostsEntry: "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=="
-          #    sshPublicKey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCxk0N0whzgiOTrcAdHsjgfCr4+LkO7D2mo9/dDJ+Nz/wf2c+V8HYy0U4xXGoYSbGBCfjHNZzj7vmHP3nhNMabWVALOjjGDyTnb/F+hkpiwfp6vwXjjrLcyvoFv9J8VnPZXVMuA2vveVckkrAbo+a2/u425v55KWkqqNuzJIDEVT8/1FJefaE6LK/NMo1zswlGUxDn2+o2pEDGRc2S/2B/s9I0RVPFpaqVFWNnF/JmtOhetWhwZbHvXof3tXcIo6LzY2NET3FyES5TlOMhLdJaKWssAGsZfM8Nfo92yZ0LNAk8V2o4S8RCFYIiABi5yvxs4N1/Cz4uEbqnF/wF+t4N5"
-          #    sshKeySecureFile: "id_rsa"
-
-          - task: ArchiveFiles@2
+            - task: ArchiveFiles@2
             displayName: "Archive FakeRestAPI"
             inputs:
               rootFolderOrFile: "$(System.DefaultWorkingDirectory)/fakerestapi"
@@ -152,10 +145,10 @@ stages:
                 package: '$(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip'
                 deploymentMethod: 'auto'
 
-    - deployment: VMDeploy
-      displayName: VM Deploy
+    - deployment: VirtualMechnDeploy
+      displayName: CICD Deploy
       environment:
-        name:  'VM-TEST'
+        name:  'CICD-TEST'
         resourceType: VirtualMachine
       strategy:
         runOnce:
