@@ -67,7 +67,7 @@ stages:
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
           environmentServiceNameAzureRM: 'AZServiceConnection'
       
-      - task: Cache@2
+      - task: TerraformInstaller@0
         displayName: Terraform Plan
         inputs:
           provider: 'azurerm'
