@@ -395,7 +395,7 @@ stages:
           backendAzureRmKey: 'terraform.tfstate'
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
       
-      - task: TerraformInstaller@2
+      - task: TerraformInstaller@0
         displayName: Terraform Apply
         inputs:
           provider: 'azurerm'
