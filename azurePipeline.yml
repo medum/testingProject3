@@ -377,7 +377,7 @@ stages:
           targetType: 'inline'
           script: cp $(Agent.TempDirectory)/terraform.tfvars $(System.DefaultWorkingDirectory)/terraform
       
-      - task: Cache@2
+      - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@0
         displayName: Install Terraform
         inputs:
           terraformVersion: '0.14.8'
