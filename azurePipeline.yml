@@ -25,7 +25,9 @@ stages:
         displayName: Download terraform.tfvars
         inputs:
           secureFile: 'terraform.tfvars'
-
+      - task: GoTool@0
+        inputs:
+          version: '1.10'
       # Needed for Terraform VM deployment
       - task: InstallSSHKey@0
         displayName: Security Access
@@ -40,12 +42,12 @@ stages:
           targetType: 'inline'
           script: cp $(Agent.TempDirectory)/terraform.tfvars $(System.DefaultWorkingDirectory)/terraform
       
-      - task: Cache@2
+      - task: TerraformInstaller@0
         displayName: Install Terraform
         inputs:
           terraformVersion: '0.14.8'
       
-      - task: Cache@2
+      - task: TerraformInstaller@0
         displayName: Terraform Init
         inputs:
           provider: 'azurerm'
@@ -57,7 +59,7 @@ stages:
           backendAzureRmKey: 'terraform.cs2100320013d36b995'
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
       
-      - task: Cache@2
+      - task: TerraformInstaller@0
         displayName: Terraform Validate
         inputs:
           provider: 'azurerm'
@@ -65,7 +67,7 @@ stages:
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
           environmentServiceNameAzureRM: 'AZServiceConnection'
       
-      - task: Cache@2
+      - task: TerraformInstaller@0
         displayName: Terraform Plan
         inputs:
           provider: 'azurerm'
@@ -73,7 +75,7 @@ stages:
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
           environmentServiceNameAzureRM: 'AZServiceConnection'
       
-      - task: Cache@2
+      - task: TerraformInstaller@0
         displayName: Terraform Apply
         inputs:
           provider: 'azurerm'
@@ -377,24 +379,23 @@ stages:
           targetType: 'inline'
           script: cp $(Agent.TempDirectory)/terraform.tfvars $(System.DefaultWorkingDirectory)/terraform
       
-      - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@0
-        displayName: Install Terraform
+     
+      - task: TerraformInstaller@0
         inputs:
-          terraformVersion: '0.14.8'
-      
-      - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@0
+          terraformVersion: '0.12.3'
+      - task: TerraformInstaller@0
         displayName: Terraform Init
         inputs:
           provider: 'azurerm'
           command: 'init'
           backendServiceArm: 'AZServiceConnection'
-          backendAzureRmResourceGroupName: 'tstate'
-          backendAzureRmStorageAccountName: 'tstate3994'
-          backendAzureRmContainerName: 'tstate'
+          backendAzureRmResourceGroupName: 'cloud-shell-storage-eastus'
+          backendAzureRmStorageAccountName: 'cs2100320013d36b995'
+          backendAzureRmContainerName: 'demo-container'
           backendAzureRmKey: 'terraform.tfstate'
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
       
-      - task: Cache@2
+      - task: TerraformInstaller@0
         displayName: Terraform Apply
         inputs:
           provider: 'azurerm'
