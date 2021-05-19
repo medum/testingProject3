@@ -25,7 +25,9 @@ stages:
         displayName: Download terraform.tfvars
         inputs:
           secureFile: 'terraform.tfvars'
-
+      - task: GoTool@0
+        inputs:
+          version: '1.10'
       # Needed for Terraform VM deployment
       - task: InstallSSHKey@0
         displayName: Security Access
