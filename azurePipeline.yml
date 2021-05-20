@@ -163,11 +163,11 @@ stages:
                 script: |
                   #! /bin/bash
                   
-                  # sudo apt-get upgrade -y
-                  # sudo apt-get install python3-pip -y
-                  # sudo apt-get install unzip -y
-                  # sudo apt-get install -y chromium-browser
-                  # pip3 install selenium
+                  sudo apt-get upgrade -y
+                  sudo apt-get install python3-pip -y
+                  sudo apt-get install unzip -y
+                  sudo apt-get install -y chromium-browser
+                  pip3 install selenium
                   
                   # download chrome driver v89
                   FILE=chromedriver_linux64.zip
@@ -177,7 +177,7 @@ stages:
                     wget https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_linux64.zip
                   fi
                   # install chrome driver
-                  unzip chromedriver_linux64.zip
+                   unzip chromedriver_linux64.zip
                    mv chromedriver /usr/bin/chromedriver
                    chown root:root /usr/bin/chromedriver
                    chmod +x /usr/bin/chromedriver
