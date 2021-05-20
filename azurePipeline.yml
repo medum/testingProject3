@@ -304,7 +304,7 @@ stages:
     - deployment: VMRunUITests
       displayName: Run UI Tests
       environment:
-        name:  'VM-TEST'
+        name:  'WEBAPP-TEST'
         resourceType: VirtualMachine
       strategy:
         runOnce:
