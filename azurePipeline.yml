@@ -10,7 +10,7 @@ trigger:
 name: CICD Pipelines
 variables:
   python.version: "3.7.6"
-  applicationname: 'jc-test2-AppService'
+  applicationname: 'fakerestapi'
 stages:
   - stage: ProvisionIaC
     displayName: CICD Resources 
