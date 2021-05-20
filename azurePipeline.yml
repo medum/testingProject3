@@ -178,9 +178,9 @@ stages:
                   fi
                   # install chrome driver
                   unzip chromedriver_linux64.zip
-                  sudo mv chromedriver /usr/bin/chromedriver
-                  sudo chown root:root /usr/bin/chromedriver
-                  sudo chmod +x /usr/bin/chromedriver
+                   mv chromedriver /usr/bin/chromedriver
+                   chown root:root /usr/bin/chromedriver
+                   chmod +x /usr/bin/chromedriver
                   chromium-browser -version
                   chromedriver --version
                   # agent log analytics
