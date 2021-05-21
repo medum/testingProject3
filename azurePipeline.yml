@@ -38,7 +38,15 @@ stages:
         inputs:
           targetType: 'inline'
           script: cp $(Agent.TempDirectory)/terraform.tfvars $(System.DefaultWorkingDirectory)/terraform
-      
+      - task: Bash@3
+        displayName: display filelist
+        inputs:
+          targetType: 'inline'
+          script: |
+            # Write your commands here
+            
+             ls - ltr
+          workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
       - task: TerraformInstaller@0
         displayName: Install Terraform
         inputs:
@@ -70,12 +78,7 @@ stages:
       #     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
       #     environmentServiceNameAzureRM: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
           # terraformVersion: '0.15.4'
-        task: Bash@3
-        displayName: display file list
-        inputs:
-        targetType: 'inline'
-        script: ls -ltr
-        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
+       
       - task: TerraformTaskV1@0
         displayName: Terraform plan
         inputs:
