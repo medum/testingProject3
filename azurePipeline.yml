@@ -58,7 +58,10 @@ stages:
           backendAzureRmContainerName: 'demo-container'
           backendAzureRmKey: 'terraform.cs2100320013d36b995'
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
-      
+      - task: CmdLine@2
+        inputs:
+          script: 'mv /opt/hostedtoolcache/terraform /usr/bin/'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
       - task: TerraformInstaller@0
         displayName: Terraform Validate
         inputs:
