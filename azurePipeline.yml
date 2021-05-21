@@ -73,6 +73,7 @@ stages:
           provider: 'azurerm'
           command: 'plan'
           environmentServiceNameAzureRM: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'      
       # - task: TerraformTaskV1@0
       #   inputs:
       #     provider: 'azurerm'
@@ -91,6 +92,7 @@ stages:
           provider: 'azurerm'
           command: 'apply'
           environmentServiceNameAzureRM: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
       # - task: TerraformTaskV1@0
       #   inputs:
       #     provider: 'azurerm'
