@@ -71,7 +71,7 @@ stages:
           command: 'validate'
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
           environmentServiceNameAzureRM: 'AZServiceConnection'
-          terraformVersion: '0.15.4'
+          # terraformVersion: '0.15.4'
       # - task: TerraformTaskV1@0
       #   inputs:
       #     provider: 'azurerm'
@@ -85,7 +85,6 @@ stages:
           command: 'plan'
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
           environmentServiceNameAzureRM: 'AZServiceConnection'
-          terraformVersion: '0.15.4'
       # - task: TerraformTaskV1@0
       #   inputs:
       #     provider: 'azurerm'
