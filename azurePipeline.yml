@@ -86,21 +86,21 @@ stages:
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
           environmentServiceNameAzureRM: 'AZServiceConnection'
           terraformVersion: '0.15.4'
-      - task: TerraformTaskV1@0
-        inputs:
-          provider: 'azurerm'
-          command: 'apply'
-          environmentServiceNameAzureRM: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
-          workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
-      # - task: TerraformInstaller@0
-      #   displayName: Terraform Apply
+      # - task: TerraformTaskV1@0
       #   inputs:
       #     provider: 'azurerm'
       #     command: 'apply'
-      #     commandOptions: |
-      #       -auto-approve
+      #     environmentServiceNameAzureRM: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
       #     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
-      #     environmentServiceNameAzureRM: 'AZServiceConnection'
+      - task: TerraformTaskV1@0
+        displayName: Terraform Apply
+        inputs:
+          provider: 'azurerm'
+          command: 'apply'
+          commandOptions: |
+            -auto-approve
+          workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
+          environmentServiceNameAzureRM: 'AZServiceConnection'
 
   - stage: Build
     jobs:
