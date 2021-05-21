@@ -25,10 +25,7 @@ stages:
         displayName: Download terraform.tfvars
         inputs:
           secureFile: 'terraform.tfvars'
-      # - task: GoTool@0
-      #   inputs:
-      #     version: '1.10'
-      # Needed for Terraform VM deployment
+     
       - task: InstallSSHKey@0
         displayName: Security Access
         inputs:
@@ -60,46 +57,44 @@ stages:
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
           terraformVersion: '0.15.4'
 
-      # - task: Bash@3
-      #   inputs:
-      #     filePath: 'mv /opt/hostedtoolcache/terraform /usr/bin/'
-    
       - task: TerraformTaskV1@0
         displayName: Terraform Validate
         inputs:
           provider: 'azurerm'
           command: 'validate'
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
-          environmentServiceNameAzureRM: 'AZServiceConnection'
+          environmentServiceNameAzureRM: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
           # terraformVersion: '0.15.4'
-      # - task: TerraformTaskV1@0
-      #   inputs:
-      #     provider: 'azurerm'
-      #     command: 'plan'
-      #     environmentServiceNameAzureRM: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
-      #     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
       - task: TerraformTaskV1@0
-        displayName: Terraform Plan
         inputs:
           provider: 'azurerm'
           command: 'plan'
+          environmentServiceNameAzureRM: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
-          environmentServiceNameAzureRM: 'AZServiceConnection'
       # - task: TerraformTaskV1@0
+      #   displayName: Terraform Plan
       #   inputs:
       #     provider: 'azurerm'
-      #     command: 'apply'
-      #     environmentServiceNameAzureRM: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
+      #     command: 'plan'
       #     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
+      #     environmentServiceNameAzureRM: 'AZServiceConnection'
       - task: TerraformTaskV1@0
-        displayName: Terraform Apply
         inputs:
           provider: 'azurerm'
           command: 'apply'
           commandOptions: |
             -auto-approve
+          environmentServiceNameAzureRM: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
-          environmentServiceNameAzureRM: 'AZServiceConnection'
+      # - task: TerraformTaskV1@0
+      #   displayName: Terraform Apply
+      #   inputs:
+      #     provider: 'azurerm'
+      #     command: 'apply'
+      #     commandOptions: |
+      #       -auto-approve
+      #     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
+      #     environmentServiceNameAzureRM: 'AZServiceConnection'
 
   - stage: Build
     jobs:
