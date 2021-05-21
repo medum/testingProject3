@@ -71,7 +71,7 @@ stages:
       #     environmentServiceNameAzureRM: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
           # terraformVersion: '0.15.4'
         task: Bash@3
-        displayName: Coping terraform.tfvars
+        displayName: display file list
         inputs:
         targetType: 'inline'
         script: ls -ltr
