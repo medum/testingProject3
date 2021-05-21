@@ -25,9 +25,9 @@ stages:
         displayName: Download terraform.tfvars
         inputs:
           secureFile: 'terraform.tfvars'
-      - task: GoTool@0
-        inputs:
-          version: '1.10'
+      # - task: GoTool@0
+      #   inputs:
+      #     version: '1.10'
       # Needed for Terraform VM deployment
       - task: InstallSSHKey@0
         displayName: Security Access
@@ -58,10 +58,12 @@ stages:
           backendAzureRmContainerName: 'demo-container'
           backendAzureRmKey: 'terraform.cs2100320013d36b995'
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
-      - task: CmdLine@2
+          terraformVersion: '0.12.3'
+
+      - task: Bash@3
         inputs:
-          script: 'mv /opt/hostedtoolcache/terraform /usr/bin/'
-          workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
+          filePath: 'mv /opt/hostedtoolcache/terraform /usr/bin/'
+    
       - task: TerraformInstaller@0
         displayName: Terraform Validate
         inputs:
