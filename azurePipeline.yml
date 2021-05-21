@@ -46,7 +46,7 @@ stages:
             # Write your commands here
             
              ls - ltr
-          workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
+          workingDirectory: '$(System.DefaultWorkingDirectory)'
       - task: TerraformInstaller@0
         displayName: Install Terraform
         inputs:
