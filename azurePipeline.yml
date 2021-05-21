@@ -38,15 +38,15 @@ stages:
         inputs:
           targetType: 'inline'
           script: cp $(Agent.TempDirectory)/terraform.tfvars $(System.DefaultWorkingDirectory)/terraform
-      - task: Bash@3
-        displayName: display filelist
-        inputs:
-          targetType: 'inline'
-          script: |
-            # Write your commands here
+      # - task: Bash@3
+      #   displayName: display filelist
+      #   inputs:
+      #     targetType: 'inline'
+      #     script: |
+      #       # Write your commands here
             
-             ls - ltr
-          workingDirectory: '$(System.DefaultWorkingDirectory)'
+      #        ls - ltr
+      #     workingDirectory: '$(System.DefaultWorkingDirectory)'
       - task: TerraformInstaller@0
         displayName: Install Terraform
         inputs:
