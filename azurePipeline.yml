@@ -180,9 +180,9 @@ stages:
       - job: RunsOnServer
         pool: Server
         steps:
-        - task: Delay@1
-          inputs:
-            delayForMinutes: '5'
+        # - task: Delay@1
+        #   inputs:
+        #     delayForMinutes: '5'
 
   - stage: Deployments
     displayName: Deployments
@@ -201,7 +201,7 @@ stages:
                 azureSubscription: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
                 appType: 'webAppLinux'
                 appName: flask-ml-azure
-                package: '$(System.DefaultWorkingDirectory)/**/$(Build.BuildId)-fakerestapi.zip'
+                package: '$(System.DefaultWorkingDirectory)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip'
                 deploymentMethod: 'auto'
 
     - deployment: VirtualMechnDeploy
