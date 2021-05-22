@@ -201,7 +201,7 @@ stages:
                 azureSubscription: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
                 appType: 'webAppLinux'
                 appName: flask-ml-azure
-                package: '/home/vsts/work/1/s/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip'
+                package: '/home/katy/azagent/_work/1/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip'
                 deploymentMethod: 'auto'
 
     - deployment: VirtualMechnDeploy
