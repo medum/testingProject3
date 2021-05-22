@@ -118,12 +118,12 @@ stages:
       #     command: 'plan'
       #     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
       # #     environmentServiceNameAzureRM: 'AZServiceConnection'
-      - task: TerraformTaskV1@0
-        inputs:
-          provider: 'azurerm'
-          command: 'apply'
-          environmentServiceNameAzureRM: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
-          workingDirectory: '$(System.DefaultWorkingDirectory)/medum/testingProject3/terraform'
+      # - task: TerraformTaskV1@0
+      #   inputs:
+      #     provider: 'azurerm'
+      #     command: 'apply'
+      #     environmentServiceNameAzureRM: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
+      #     workingDirectory: '$(System.DefaultWorkingDirectory)/medum/testingProject3/terraform'
       # - task: TerraformTaskV1@0
       #   inputs:
       #     provider: 'azurerm'
@@ -200,7 +200,7 @@ stages:
               inputs:
                 azureSubscription: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
                 appType: 'webAppLinux'
-                appName: $(applicationname)
+                appName: flask-ml-azure
                 package: '$(System.DefaultWorkingDirectory)/**/$(Build.BuildId)-fakerestapi.zip'
                 deploymentMethod: 'auto'
 
