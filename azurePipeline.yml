@@ -82,7 +82,7 @@ stages:
       #   inputs:
       #     provider: 'azurerm'
       #     command: 'validate'
-          workingDirectory: '$(System.DefaultWorkingDirectory)/medum/testingProject3/terraform'
+          # workingDirectory: '$(System.DefaultWorkingDirectory)/medum/testingProject3/terraform'
       # - task: TerraformTaskV1@0
       #   displayName: Terraform Validate
       #   inputs:
