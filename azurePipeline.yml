@@ -179,7 +179,7 @@ stages:
     jobs:
       - job: RunsOnServer
         pool: Server
-        steps:
+        # steps:
         # - task: Delay@1
         #   inputs:
         #     delayForMinutes: '5'
