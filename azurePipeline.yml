@@ -52,14 +52,14 @@ stages:
       #       # Write your commands here
             
       #        ls - ltr
-      #     workingDirectory: '$(System.DefaultWorkingDirectory)'
-      - task: GitClone@2
-        inputs:
-          RepositoryURL: 'https://github.com/medum/testingProject3.git'
-          RepositoryPath: '$(System.DefaultWorkingDirectory)'
-          Branch: 'master'
-          FallbackBranch: 'master'
-          BaseBranch: 'master'
+      # #     workingDirectory: '$(System.DefaultWorkingDirectory)'
+      # - task: GitClone@2
+      #   inputs:
+      #     RepositoryURL: 'https://github.com/medum/testingProject3.git'
+      #     RepositoryPath: '$(System.DefaultWorkingDirectory)'
+      #     Branch: 'master'
+      #     FallbackBranch: 'master'
+      #     BaseBranch: 'master'
       - task: TerraformInstaller@0
         displayName: Install Terraform
         inputs:
