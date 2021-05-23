@@ -200,7 +200,7 @@ stages:
               inputs:
                 azureSubscription: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
                 appType: 'webAppLinux'
-                appName: 'jc-test2-appservice'
+                appName: 'flask-ml-azure'
                 package: '/home/katy/azagent/_work/1/drop-fakerestapi/78-fakerestapi.zip'
                 deploymentMethod: 'auto'
 
