@@ -251,8 +251,8 @@ stages:
               inputs:
                 targetType: 'inline'
                 script: |
-                  unzip -o $(Pipeline.Workspace)/selenium/selenium-tests.zip -d .
-                  sudo mkdir /var/logs
+                  # unzip -o $(Pipeline.Workspace)/selenium/selenium-tests.zip -d .
+                  # sudo mkdir /var/logs
                   python3 uitests.py > ui-logs.log
                   sudo mv ui-logs.log /var/logs
                   
