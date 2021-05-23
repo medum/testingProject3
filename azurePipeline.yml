@@ -191,18 +191,18 @@ stages:
       pool:
         vmImage: 'Ubuntu-18.04'
       environment: 'WEBAPP-TEST'
-      strategy:
-        runOnce:
-          deploy:
-            steps:
-            - task: AzureWebApp@1
-              displayName: 'Deploy Azure Web App'
-              inputs:
-                azureSubscription: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
-                appType: 'webAppLinux'
-                appName: 'flask-ml-azure'
-                package: '/$(System.DefaultWorkingDirectory)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip'
-                deploymentMethod: 'auto'
+      # strategy:
+        # runOnce:
+          # deploy:
+            # steps:
+            # - task: AzureWebApp@1
+            #   displayName: 'Deploy Azure Web App'
+            #   inputs:
+            #     azureSubscription: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
+            #     appType: 'webAppLinux'
+            #     appName: 'flask-ml-azure'
+            #     package: '/$(System.DefaultWorkingDirectory)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip'
+            #     deploymentMethod: 'auto'
 
     - deployment: VirtualMechnDeploy
       displayName: CICD Deploy
