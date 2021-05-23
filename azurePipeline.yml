@@ -156,11 +156,11 @@ stages:
               archiveType: "zip"
               archiveFile: '$(Build.BuildId)-fakerestapi.zip'
 
-          - task: PublishPipelineArtifact@1
-            displayName: "Upload farestapi Package"
-            inputs:
-              targetPath: $(System.DefaultWorkingDirectory)/$(Build.BuildId)-fakerestapi.zip
-              artifactName: drop-fakerestapi
+          # - task: PublishPipelineArtifact@1
+          #   displayName: "Upload farestapi Package"
+          #   inputs:
+          #     targetPath: $(System.DefaultWorkingDirectory)/$(Build.BuildId)-fakerestapi.zip
+          #     artifactName: drop-fakerestapi
 
           - task: ArchiveFiles@2
             displayName: "Archive Selenium UI Tests"
