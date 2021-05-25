@@ -163,6 +163,7 @@ stages:
             backendAzureRmStorageAccountName: 'cs2100320013d36b995'
             backendAzureRmContainerName: 'demo-container'
             backendAzureRmKey: 'DefaultEndpointsProtocol=https;AccountName=cs2100320013d36b995;AccountKey=JjsRDd9vZKY3u0c5kDt2z/AF1yW7RUGBPG/VGA1q7zQdfb5KIOcgln9U7rA+VqA/gfX4AE8/GMDP+9PSUPl5uA==;EndpointSuffix=core.windows.net'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/Terraform'
         - task: TerraformTaskV2@2
           inputs:
             provider: 'azurerm'
