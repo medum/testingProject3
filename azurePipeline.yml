@@ -261,7 +261,7 @@ stages:
     jobs:
     - job: PostmanTests
       displayName: Postman Tests
-      steps: 
+      # steps: 
       # - task: NodeTool@0
       #   inputs:
       #     versionSpec: '6.x'
