@@ -151,16 +151,16 @@ stages:
         - task: Bash@3
           displayName: "List the files"
           inputs:
-          targetType: 'inline'
-          script: 'ls - ltr'
-          workingDirectory: '$(System.DefaultWorkingDirectory)/testingProject3/Terraform'
+            targetType: 'inline'
+            script: 'ls - ltr'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/testingProject3/Terraform'
       
         - task: TerraformTaskV2@2
           inputs:
-          provider: 'azurerm'
-          command: 'apply'
-          workingDirectory: '$(System.DefaultWorkingDirectory)/testingProject3/Terraform'
-          environmentServiceNameAzureRM: 'CICDPipeline'
+            provider: 'azurerm'
+            command: 'apply'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/testingProject3/Terraform'
+            environmentServiceNameAzureRM: 'CICDPipeline'
 
         - task: ArchiveFiles@2
           displayName: "Archive FakeRestAPI"
