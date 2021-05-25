@@ -159,7 +159,7 @@ stages:
           inputs:
             provider: 'azurerm'
             command: 'apply'
-            workingDirectory: '$(System.DefaultWorkingDirectory)/testingProject3/Terraform'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/Terraform'
             environmentServiceNameAzureRM: 'CICDPipeline'
 
         - task: ArchiveFiles@2
