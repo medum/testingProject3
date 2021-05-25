@@ -147,7 +147,13 @@ stages:
       - job: Build
         pool:
           name: Hosted Ubuntu 1604
-        steps:
+          steps:
+          - task: Bash@3
+            displayName: "List the files"
+            inputs:
+              targetType: 'inline'
+              script: 'ls - ltr'
+              workingDirectory: '$(System.DefaultWorkingDirectory)/testingProject3/Terraform'
           - task: TerraformTaskV2@2
             inputs:
               provider: 'azurerm'
