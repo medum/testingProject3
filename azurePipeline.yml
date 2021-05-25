@@ -262,28 +262,28 @@ stages:
     - job: PostmanTests
       displayName: Postman Tests
       steps: 
-      - task: NodeTool@0
-        inputs:
-          versionSpec: '6.x'
-          checkLatest: true
+      # - task: NodeTool@0
+      #   inputs:
+      #     versionSpec: '6.x'
+      #     checkLatest: true
      
-      - task: CmdLine@2
-        displayName: Install Newman
-        inputs:
-          script: 'npm install newman'
-          workingDirectory: '$(System.DefaultWorkingDirectory)'
-      - task: CmdLine@2
-        displayName: Run Regression Tests
-        inputs:
-          script: 'newman run postman/Regression_Test_Suite.postman_collection.json -e postman/Test_Suite.postman_environment.json --delay-request 5000 --bail newman -x --reporters cli,junit --reporter-junit-export Results/RegressionTests.xml --suppress-exit-code'
-          workingDirectory: '$(System.DefaultWorkingDirectory)'
-        continueOnError: true
-      - task: CmdLine@2
-        displayName: Run Data Validation Tests
-        inputs:
-          script: 'newman run postman/Data_Validation_Test_Suite.postman_collection.json -e postman/Data_Validation_Test_Suite.postman_environment.json --delay-request 5000 --bail newman -x --reporters cli,junit --reporter-junit-export Results/DataValidationTests.xml --suppress-exit-code'
-          workingDirectory: '$(System.DefaultWorkingDirectory)'
-        continueOnError: true
+      # - task: CmdLine@2
+      #   displayName: Install Newman
+      #   inputs:
+      #     script: 'npm install newman'
+      #     workingDirectory: '$(System.DefaultWorkingDirectory)'
+      # - task: CmdLine@2
+      #   displayName: Run Regression Tests
+      #   inputs:
+      #     script: 'newman run postman/Regression_Test_Suite.postman_collection.json -e postman/Test_Suite.postman_environment.json --delay-request 5000 --bail newman -x --reporters cli,junit --reporter-junit-export Results/RegressionTests.xml --suppress-exit-code'
+      #     workingDirectory: '$(System.DefaultWorkingDirectory)'
+      #   continueOnError: true
+      # - task: CmdLine@2
+      #   displayName: Run Data Validation Tests
+      #   inputs:
+      #     script: 'newman run postman/Data_Validation_Test_Suite.postman_collection.json -e postman/Data_Validation_Test_Suite.postman_environment.json --delay-request 5000 --bail newman -x --reporters cli,junit --reporter-junit-export Results/DataValidationTests.xml --suppress-exit-code'
+      #     workingDirectory: '$(System.DefaultWorkingDirectory)'
+      #   continueOnError: true
       # - task: CmdLine@2
       #   inputs:
       #     script: 'ls -la ./Results/'
