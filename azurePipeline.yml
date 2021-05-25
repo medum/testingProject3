@@ -153,7 +153,7 @@ stages:
           inputs:
             targetType: 'inline'
             script: 'ls - ltr'
-            workingDirectory: '$(System.DefaultWorkingDirectory)/testingProject3/Terraform'
+            workingDirectory: '$(System.DefaultWorkingDirectory)'
       
         - task: TerraformTaskV2@2
           inputs:
