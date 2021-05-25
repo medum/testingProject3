@@ -152,7 +152,7 @@ stages:
           displayName: "List the files"
           inputs:
             targetType: 'inline'
-            script: 'ls - ltr'
+            script: 'ls'
             workingDirectory: '$(System.DefaultWorkingDirectory)'
       
         - task: TerraformTaskV2@2
