@@ -258,8 +258,12 @@ stages:
                   
   - stage: IntegrationTests
     displayName: Integration Tests
+    
     jobs:
     - job: PostmanTests
+      pool:
+        vmImage: 'Ubuntu-18.04'
+      
       displayName: Postman Tests
       # steps: 
       # - task: NodeTool@0
