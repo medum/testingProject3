@@ -155,9 +155,11 @@ stages:
             script: 'ls'
             workingDirectory: '$(System.DefaultWorkingDirectory)'
         - task: TerraformInstaller@0
+          displayName: "Install Terraform"
           inputs:
             terraformVersion: '0.15.4'
         - task: TerraformTaskV2@2
+          displayName: "Terraform Init"
           inputs:
             provider: 'azurerm'
             command: 'init'
@@ -169,6 +171,7 @@ stages:
             workingDirectory: '$(System.DefaultWorkingDirectory)/Terraform'
             
         - task: TerraformTaskV2@2
+          displayName: "Terraform apply"
           inputs:
             provider: 'azurerm'
             command: 'apply'
