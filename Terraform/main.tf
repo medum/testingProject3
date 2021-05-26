@@ -28,7 +28,7 @@ module "resource_group" {
 module "network" {
   source               = "./modules/network"
   location             = var.location
-  address_space        = var.address_space
+  address_space        = ["10.5.0.0/16"]
   virtual_network_name = var.virtual_network_name
   application_type     = var.application_type
   resource_type        = "NET"
