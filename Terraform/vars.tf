@@ -65,6 +65,7 @@ variable "vm-size" {
 variable "environment" {
   type        = string
   description = "This variable defines the environment to be built"
+  default     = "WEBAPP-TEST"
 }
 variable "application_type" {
   type        = string
