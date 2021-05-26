@@ -9,7 +9,7 @@ resource "azurerm_network_interface" "test" {
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = var.public_ip
   }
-}
+
 
 resource "azurerm_linux_virtual_machine" "test" {
   name                  = var.name
@@ -39,3 +39,4 @@ resource "azurerm_linux_virtual_machine" "test" {
     stage        = "Testing"
   }
 }
+  }
