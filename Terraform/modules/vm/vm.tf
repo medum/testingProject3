@@ -4,8 +4,8 @@ provider "azurerm" {
   features {}
   subscription_id = var.subscription_id
   client_id       = var.client_id
-  client_secret   = var.client_secret
-  tenant_id       = var.tenant_id
+  client_secret   = "1lShOuES7iGdYW-~ykF~D.tT7YeYATmvoK"
+  tenant_id       = "19cf5455-841e-4591-9654-f8b08846a572"
 }
 data "azurerm_image" "packer-image" {
   name                = "myPackerImage"
