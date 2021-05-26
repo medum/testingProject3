@@ -67,7 +67,7 @@ variable "application_type" {
 variable "address_prefix_test" {
   type        = string
   description = "address_prefix_test "
-  default     = "10.5.1.0/24"
+  default     = "13.90.248.92"
 }
 
 # azure region
