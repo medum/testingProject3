@@ -19,7 +19,7 @@ packer_image   = "myPackerImage"
 admin_username = "admin"
 
 # public key in azure pipelines
-public_key_path = "/home/katy/.ssh/id_rsa.pub"
+public_key_path = "/home/vsts/work/_temp/id_rsa"
 
 # public key on Windows local machine
 # public_key_path = "~/.ssh/id_rsa.pub"
