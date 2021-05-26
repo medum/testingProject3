@@ -89,7 +89,7 @@ variable "resource_group" {
 
 variable "packer_resource_group" {
   description = "Mention the name of the resource group where the image is located"
-  default     = "demo-rg"
+  default     = "proj3-packerIMG"
   type        = string
 }
 variable "packer_image" {
