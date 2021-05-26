@@ -185,6 +185,13 @@ Set up email alerts in the App Service:
 In the azure portal go to the app service > Alerts > New Alert Rule. Add an HTTP 404 condition and add a threshold value of 1. This will create an alert if there are two or more consecutive 404 alerts. Click Done. Then create an action group with notification type Email/SMS message/Push/Voice and choose the email option. Set the alert rule name and severity. Wait ten minutes for the alert to take effect. If you then visit the URL of the app service and try to go to a non-existent page more than once it should trigger the email alert.
   ![image](https://user-images.githubusercontent.com/49653011/119432782-f4c34200-bce2-11eb-81d4-35cdfdffc33a.png)
 ![image](https://user-images.githubusercontent.com/49653011/119433637-9f883000-bce4-11eb-882d-787c6d2ba35e.png)
+![image](https://user-images.githubusercontent.com/49653011/119720763-61038a00-be38-11eb-89cc-97bca02b277d.png)
+![image](https://user-images.githubusercontent.com/49653011/119721122-c6577b00-be38-11eb-92e5-506adb951032.png)
+![image](https://user-images.githubusercontent.com/49653011/119721476-3108b680-be39-11eb-9686-b5e78635e10b.png)
+![image](https://user-images.githubusercontent.com/49653011/119723242-3cf57800-be3b-11eb-9574-3921864bd120.png)
+![image](https://user-images.githubusercontent.com/49653011/119723369-5bf40a00-be3b-11eb-80da-793a1f1a1af6.png)
+![image](https://user-images.githubusercontent.com/49653011/119729943-3408a480-be43-11eb-8766-1958e72b9f74.png)
+![image](https://user-images.githubusercontent.com/49653011/119730168-6914f700-be43-11eb-93f0-9b81eb92f04a.png)
 
 
 Go to the App service > Diagnostic Settings > + Add Diagnostic Setting. Tick AppServiceHTTPLogs and Send to Log Analytics Workspace created on step above and Save.
