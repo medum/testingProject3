@@ -6,12 +6,12 @@ variable "subscription_id" {
 
 variable "client_id" {
   type        = string
-  description = "2e4a533b-0e77-45f3-a33b-bcde627341f6"
+  default = "2e4a533b-0e77-45f3-a33b-bcde627341f6"
 }
 
 variable "client_secret" {
   type        = string
-  description = "1lShOuES7iGdYW-~ykF~D.tT7YeYATmvoK"
+  default = "1lShOuES7iGdYW-~ykF~D.tT7YeYATmvoK"
 }
 
 variable "tenant_id" {
@@ -25,26 +25,18 @@ variable "tenant_id" {
 ## Core Network - Variables ##
 ##############################
 
-variable "network-vnet-cidr" {
-  type        = string
-  description = "The CIDR of the network VNET"
-}
 
-variable "network-subnet-cidr" {
-  type        = string
-  description = "The CIDR for the network subnet"
-}
 variable "vm-username" {
   type        = string
   description = "VM Admin User"
-  default     = "<userName>"
+  default     = "admin"
 }
 
 # VM Admin Password
 variable "vm-password" {
   type        = string
   description = "VM Admin Password"
-  default     = "<password>"
+  default     = "Start123!"
 }
 
 # VM Hostname (limited to 15 characters long)
