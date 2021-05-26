@@ -309,7 +309,15 @@ stages:
         inputs:
           targetPath: '$(System.DefaultWorkingDirectory)/log/jmeter'
           artifactName: 'drop-jmeter-logs'
-
+      - task: Bash@3
+        inputs:
+          targetType: 'inline'
+          script: 'ls'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/log/jmeter'
+      - task: PublishTestResults@2
+        inputs:
+          testResultsFormat: 'JUnit'
+          testResultsFiles: '**/*.xml'
   - stage: UITests
     displayName: UI Tests - Selenium
     jobs:
@@ -346,7 +354,7 @@ stages:
             #   inputs:
             #     targetPath: '$(System.DefaultWorkingDirectory)/log/selenium/selenium-test.log'
             #     artifactName: 'drop-selenium-logs'
-
+          
   - stage: WaitUserApproval
     displayName: User Approval
     jobs:
