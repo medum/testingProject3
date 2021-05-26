@@ -11,7 +11,6 @@ resource "azurerm_network_interface" "test" {
   }
 }
 
-
 resource "azurerm_linux_virtual_machine" "test" {
   name                  = var.name
   location              = var.location
@@ -40,4 +39,3 @@ resource "azurerm_linux_virtual_machine" "test" {
     stage        = "Testing"
   }
 }
-  }
