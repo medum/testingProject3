@@ -341,11 +341,11 @@ stages:
                   pwd
                   sudo cp /var/log/selenium/selenium-test.log log/selenium/selenium-test.log
                   ls -la
-            - task: PublishPipelineArtifact@1
-              displayName: Publish selenium logs
-              inputs:
-                targetPath: '$(System.DefaultWorkingDirectory)/log/selenium/selenium-test.log'
-                artifactName: 'drop-selenium-logs'
+            # - task: PublishPipelineArtifact@1
+            #   displayName: Publish selenium logs
+            #   inputs:
+            #     targetPath: '$(System.DefaultWorkingDirectory)/log/selenium/selenium-test.log'
+            #     artifactName: 'drop-selenium-logs'
 
   - stage: WaitUserApproval
     displayName: User Approval
