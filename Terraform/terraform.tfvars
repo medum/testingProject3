@@ -11,7 +11,7 @@ application_type = "CompleteCICDProj"
 
 # Network
 virtual_network_name = "project3-vm"
-address_space        = "13.90.248.92"
+
 address_prefix_test  = "10.0.0.4"
 
 # VM
