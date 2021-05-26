@@ -4,12 +4,12 @@ variable "subscription_id" {
   description = "Mention the Azure Subscription ID"
 }
 
-variable "client-id" {
+variable "client_id" {
   type        = string
   description = "2e4a533b-0e77-45f3-a33b-bcde627341f6"
 }
 
-variable "client-secret" {
+variable "client_secret" {
   type        = string
   description = "1lShOuES7iGdYW-~ykF~D.tT7YeYATmvoK"
 }
@@ -48,7 +48,7 @@ variable "vm-password" {
 }
 
 # VM Hostname (limited to 15 characters long)
-variable "vm-hostname" {
+variable "virtual_network_name" {
   type        = string
   description = "VM Hostname"
   default     = "demoVM"
@@ -65,6 +65,16 @@ variable "vm-size" {
 variable "environment" {
   type        = string
   description = "This variable defines the environment to be built"
+}
+variable "application_type" {
+  type        = string
+  description = "application_type"
+  default     = "CompleteCICDProj"
+}
+variable "address_prefix_test" {
+  type        = string
+  description = "address_prefix_test "
+  default     = "10.5.1.0/24"
 }
 
 # azure region
@@ -89,9 +99,29 @@ variable "packer_resource_group" {
   default     = "demo-rg"
   type        = string
 }
+variable "packer_image" {
+  description = "packer_image"
+  default     = "myPackerImage"
+  type        = string
+}
+variable "public_key_path" {
+  description = "public_key_path "
+  default     = "/home/katy/.ssh/id_rsa.pub"
+  type        = string
+}
+variable "admin_username" {
+  description = "admin_username"
+  default     = "admin"
+  type        = string
+}
 variable "prefix" {
   description = "The prefix which should be used for all resources in the resource group specified"
   default     = "devops-proj3"
+  type        = string
+}
+variable "address_space" {
+  description = "address_space"
+  default     = "10.5.0.0/16"
   type        = string
 }
 
