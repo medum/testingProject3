@@ -114,7 +114,6 @@ variable "prefix" {
 }
 variable "address_space" {
   description = "address_space"
-  default     = "10.5.0.0/16"
   type        = string
 }
 
