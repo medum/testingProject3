@@ -99,7 +99,7 @@ variable "packer_image" {
 }
 variable "public_key_path" {
   description = "public_key_path "
-  default     = "/home/katy/.ssh/id_rsa.pub"
+  default     = "/home/vsts/work/_temp/id_rsa"
   type        = string
 }
 variable "admin_username" {
