@@ -153,6 +153,7 @@ Wait the Pipeline is going to execute on the following Stages:
 Build --> FirstWait --> WebApp Deployment --> UI Tests (selenium) -> Integration Tests (postman) --> JMeter -->secondWait
 
 img2
+![image](https://user-images.githubusercontent.com/49653011/119718526-ad999600-be35-11eb-8b51-48408198c948.png)
 
 Explanation of the Stages
 Provisioning IaC : using Terraform , perform the provisioning of the IaC (RG, VNet, subnet, public IP, App Service, VM Linux).
