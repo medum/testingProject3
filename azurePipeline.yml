@@ -31,13 +31,8 @@ stages:
         inputs:
           knownHostsEntry: 'github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
           sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCm7A8STmYHdsy1Ka9Kjnu64hylelvI4fzyFA/989jrsbQ0pg1JpCpTdXfahUUScpjSmNmdx8EZtVSZgERrOPkFach6/FFP/yuGB9HYQ3Fr4dpBxqmyyzC+ECOG7ISfFUMV47JBojzFvu47fdV8Q+phmCo41caPXMLWYYvta0ta2xFa4SM9o2zcDBbk4XLYxqazOtbvuBwF4OLIoTOPNj9ge9KX0snShprA+6AQXJPbUiUXl1e/ABq7oTZyw0NwgYQA14PD4T09aiY7jNX4qC0PlRBZo1wXs3rQ0krm5A6rOp/G/1exh0c152ndjyJbkTtqU2h3L4fsGtdgkL7fl0TD katy@cc-67cac3a2-65966576b5-pwmxt'
-          sshKeySecureFile: 'id_rsa.pub'
-      # - task: DownloadGitHubRelease@0
-      #   inputs:
-      #     connection: 'github.com_medum'
-      #     userRepository: 'medum/testingProject3'
-      #     defaultVersionType: 'latest'
-      #     downloadPath: '$(System.ArtifactsDirectory)/project3'
+          sshKeySecureFile: 'id_rsa'
+   
 
       - task: Bash@3
         displayName: Coping terraform.tfvars
