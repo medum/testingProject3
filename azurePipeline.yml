@@ -69,6 +69,12 @@ stages:
             targetType: 'inline'
             script: 'ls'
             workingDirectory: '$(System.DefaultWorkingDirectory)'
+        - task: Bash@3
+          displayName: "List the files in home"
+          inputs:
+            targetType: 'inline'
+            script: 'ls'
+            workingDirectory: "/home/vsts/work/_temp/"
         - task: TerraformInstaller@0
           displayName: "Install Terraform"
           inputs:
