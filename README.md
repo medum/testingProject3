@@ -166,7 +166,20 @@ Deployments : Deploy FakeRestAPI artifact to the Azure App Service ( created on 
 
 Integration Tests: Postman Regression and Data Validation tests (using newman/postman) to the APP api created above and publishing the results.
 
-JMeter TEsts: JMeter Tests - Endurance & Stress Tests to the APP created above, and publish the results
+JMeter Tests: JMeter Tests - Endurance & Stress Tests to the APP created above, and publish the results
+  Out Put looks like this:
+![image](https://user-images.githubusercontent.com/49653011/119913466-f92e6b80-bf2b-11eb-8189-e3637b232bc3.png)
+![image](https://user-images.githubusercontent.com/49653011/119913645-6e9a3c00-bf2c-11eb-89ea-dc020f0a022a.png)
+![image](https://user-images.githubusercontent.com/49653011/119913851-faac6380-bf2c-11eb-9e0d-f31c3c88f040.png)
+![image](https://user-images.githubusercontent.com/49653011/119914406-03516980-bf2e-11eb-9b08-064950c6bc75.png)
+![image](https://user-images.githubusercontent.com/49653011/119914793-0ac54280-bf2f-11eb-8c66-7da6b6ec6714.png)
+![image](https://user-images.githubusercontent.com/49653011/119921066-5c73ca00-bf3b-11eb-9550-bd7e0b6a7419.png)
+![image](https://user-images.githubusercontent.com/49653011/119921281-b7a5bc80-bf3b-11eb-9433-e76c8bb9073b.png)
+![image](https://user-images.githubusercontent.com/49653011/119921463-08b5b080-bf3c-11eb-8bb7-ed2cfdc2f705.png)
+![image](https://user-images.githubusercontent.com/49653011/119921581-41ee2080-bf3c-11eb-9bfb-e3f3a3ec7388.png)
+![image](https://user-images.githubusercontent.com/49653011/119921686-6ea23800-bf3c-11eb-9de7-ca465a13bc35.png)
+
+  
 
 UI Tests : Execution of the Selenium Tests an publish its results using the WEBAPP-TEST environment.
 
