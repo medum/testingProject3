@@ -182,6 +182,8 @@ JMeter Tests: JMeter Tests - Endurance & Stress Tests to the APP created above, 
   
 
 UI Tests : Execution of the Selenium Tests an publish its results using the WEBAPP-TEST environment.
+  ![image](https://user-images.githubusercontent.com/49653011/119923577-e756c380-bf3f-11eb-9b4d-96114abf2412.png)
+
 
 WaitforApproval: Manual Intervention to approve the Pipeline and resume it ( 2 hours as maximum)
 
