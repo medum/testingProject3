@@ -11,10 +11,7 @@ data "azurerm_image" "packer-image" {
   name                = "myPackerImage"
   resource_group_name = "demo-rg"
 }
-data "azurerm_image" "packer-image" {
-  name                = "myPackerImage"
-  resource_group_name = "proj3-packerIMG"
-}
+
 
   resource "azurerm_network_interface" "test" {
   name                = "udacity-project-3-NIC"
