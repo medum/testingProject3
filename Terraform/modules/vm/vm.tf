@@ -9,7 +9,7 @@ provider "azurerm" {
 }
 data "azurerm_image" "packer-image" {
   name                = "myPackerImage"
-  resource_group_name = "proj3-packerIMG"
+  resource_group_name = "demo-rg"
 }
 
   resource "azurerm_network_interface" "test" {
@@ -19,7 +19,7 @@ data "azurerm_image" "packer-image" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = "demo-rg-vnet/default"
+    subnet_id                     = "/subscriptions/d869cbf8-8990-4e0b-94ca-9ec4e5ee2463/resourceGroups/demo-rg/providers/Microsoft.Compute/virtualMachines/demo-vm"
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = "13.90.248.92"
   }
@@ -28,7 +28,7 @@ data "azurerm_image" "packer-image" {
 resource "azurerm_linux_virtual_machine" "test" {
   name                  = "demo-vm"
   location              = "East US"
-  resource_group_name   = "proj3-packerIMG"
+  resource_group_name   = "demo-rg"
   size                  = "Standard_B2s"
   admin_username        = "admin"
   source_image_id       = "myPackerImage"
