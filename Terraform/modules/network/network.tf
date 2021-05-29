@@ -1,5 +1,5 @@
 resource "azurerm_virtual_network" "test" {
-  name                 = "${var.application_type}-${var.resource_type}"
+  name                 = "test-ntwrk"
   address_space        = var.address_space
   location             = var.location
   resource_group_name  = var.resource_group
