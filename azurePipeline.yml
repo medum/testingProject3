@@ -160,16 +160,16 @@ stages:
       environment:
         name:  'WEBAPP-TEST'
         resourceType: VirtualMachine
-      # strategy:
-        # runOnce:
-          # deploy:
-            # steps:
-            # - task: Bash@3
-            #   displayName: 'Install Dependencies'
-            #   inputs:
-            #     targetType: 'inline'
-            #     script: |
-            #       #! /bin/bash
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - task: Bash@3
+              displayName: 'Install Dependencies'
+              inputs:
+                targetType: 'inline'
+                script: |
+                  #! /bin/bash
                   
             #       # sudo apt-get upgrade -y
             #       # sudo apt-get install python3-pip -y
@@ -197,15 +197,15 @@ stages:
             # - download: current
             #   displayName: 'Download Selenium'
               # artifact: selenium
-            # - task: Bash@3
-              # displayName: UI Tests
-              # inputs:
-              #   targetType: 'inline'
-              #   script: |
-              #     # unzip -o $(Pipeline.Workspace)/selenium/selenium-tests.zip -d .
-              #     # sudo mkdir /var/logs
-              #     python3 uitests.py > ui-logs.log
-              #     sudo mv ui-logs.log /var/logs
+            - task: Bash@3
+              displayName: UI Tests
+              inputs:
+                targetType: 'inline'
+                script: |
+                  # unzip -o $(Pipeline.Workspace)/selenium/selenium-tests.zip -d .
+                  # sudo mkdir /var/logs
+                  python3 uitests.py > ui-logs.log
+                  sudo mv ui-logs.log /var/logs
                   
   - stage: IntegrationTests
     displayName: Integration Tests
