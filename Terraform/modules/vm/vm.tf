@@ -19,9 +19,9 @@ data "azurerm_image" "packer-image" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = "/subscriptions/d869cbf8-8990-4e0b-94ca-9ec4e5ee2463/resourceGroups/demo-rg/providers/Microsoft.Compute/virtualMachines/demo-vm"
+    subnet_id                     = azurerm_subnet.test.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = "13.90.248.92"
+    
   }
 }
 
