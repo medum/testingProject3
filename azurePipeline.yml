@@ -146,6 +146,14 @@ stages:
         runOnce:
           deploy:
             steps:
+            - task: Bash@3
+              inputs:
+                targetType: 'inline'
+                script: |
+                  # Write your commands here
+                  
+                  ls
+                workingDirectory: '/$(System.DefaultWorkingDirectory)/'
             - task: AzureWebApp@1
               displayName: 'Deploy Azure Web App'
               inputs:
