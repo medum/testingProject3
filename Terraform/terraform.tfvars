@@ -7,7 +7,7 @@ tenant_id       = "19cf5455-841e-4591-9654-f8b08846a572"
 # Resource Group/Location
 location         = "eastus2"
 resource_group   = "proj3-packerIMG"
-application_type = "Microsoft.Web/sites"
+application_type = "AppService"
 
 # Network
 virtual_network_name = "project3-vm"
