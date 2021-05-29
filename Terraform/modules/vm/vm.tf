@@ -19,7 +19,7 @@ data "azurerm_image" "packer-image" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = azurerm_subnet.test.id
+    subnet_id                     = azurerm_network_interface.test.id
     private_ip_address_allocation = "Dynamic"
     
   }
