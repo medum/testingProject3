@@ -62,7 +62,7 @@ variable "environment" {
 variable "application_type" {
   type        = string
   description = "application_type"
-  default     = "CompleteCICDProj"
+  default     = "Microsoft.Web/sites"
 }
 variable "address_prefix_test" {
   type        = string
