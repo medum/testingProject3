@@ -107,11 +107,11 @@ stages:
                 archiveType: "zip"
                 archiveFile: '$(Build.BuildId)-fakerestapi.zip'
 
-            # - task: PublishPipelineArtifact@1
-            #   displayName: "Upload farestapi Package"
-            #   inputs:
-            #     targetPath: $(System.DefaultWorkingDirectory)/$(Build.BuildId)-fakerestapi.zip
-            #     artifactName: drop-fakerestapi
+        - task: PublishPipelineArtifact@1
+          displayName: "Upload farestapi Package"
+          inputs:
+              targetPath: $(System.DefaultWorkingDirectory)/$(Build.BuildId)-fakerestapi.zip
+              artifactName: drop-fakerestapi
 
         - task: ArchiveFiles@2
           displayName: "Archive Selenium UI Tests"
@@ -142,18 +142,18 @@ stages:
       pool:
         vmImage: 'Ubuntu-18.04'
       environment: 'WEBAPP-TEST'
-      # strategy:
-        # runOnce:
-          # deploy:
-            # steps:
-            # - task: AzureWebApp@1
-            #   displayName: 'Deploy Azure Web App'
-            #   inputs:
-            #     azureSubscription: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
-            #     appType: 'webAppLinux'
-            #     appName: 'flask-ml-azure'
-            #     package: '/$(System.DefaultWorkingDirectory)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip'
-            #     deploymentMethod: 'auto'
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - task: AzureWebApp@1
+              displayName: 'Deploy Azure Web App'
+              inputs:
+                azureSubscription: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
+                appType: 'webAppLinux'
+                appName: 'flask-ml-azure'
+                package: '/$(System.DefaultWorkingDirectory)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip'
+                deploymentMethod: 'auto'
 
     - deployment: VirtualMechnDeploy
       displayName: CICD Deploy
@@ -217,16 +217,16 @@ stages:
       
       displayName: Postman Tests
       steps: 
-      # - task: NodeTool@0
-      #   inputs:
-      #     versionSpec: '6.x'
-      #     checkLatest: true
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '6.x'
+          checkLatest: true
      
-      # - task: CmdLine@2
-      #   displayName: Install Newman
-      #   inputs:
-      #     script: 'npm install newman'
-      #     workingDirectory: '$(System.DefaultWorkingDirectory)'
+      - task: CmdLine@2
+        displayName: Install Newman
+        inputs:
+          script: 'npm install newman'
+          workingDirectory: '$(System.DefaultWorkingDirectory)'
       - task: CmdLine@2
         displayName: Run Regression Tests
         inputs:
