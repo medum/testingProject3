@@ -11,6 +11,10 @@ data "azurerm_image" "packer-image" {
   name                = "myPackerImage"
   resource_group_name = "demo-rg"
 }
+data "azurerm_image" "packer-image" {
+  name                = "myPackerImage"
+  resource_group_name = "proj3-packerIMG"
+}
 
   resource "azurerm_network_interface" "test" {
   name                = "udacity-project-3-NIC"
@@ -28,10 +32,10 @@ data "azurerm_image" "packer-image" {
 resource "azurerm_linux_virtual_machine" "test" {
   name                  = "demo-vm"
   location              = "East US"
-  resource_group_name   = "demo-rg"
+  resource_group_name   = "proj3-packerIMG"
   size                  = "Standard_B2s"
   admin_username        = "admin"
-  source_image_id       = "myPackerImage"
+  source_image_id       = data.azurerm_image.packer-image.id
   disable_password_authentication = true
 
   network_interface_ids = [azurerm_network_interface.test.id]
