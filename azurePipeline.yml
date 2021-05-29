@@ -10,7 +10,7 @@ trigger:
 name: CICD Pipelines
 variables:
   python.version: "3.7.6"
-  applicationname: 'flask-ml-azure'
+  applicationname: 'jc-test2-AppService'
 stages:
   - stage: ProvisionIaC
     displayName: CICD Resources 
@@ -158,8 +158,8 @@ stages:
               inputs:
                 azureSubscription: 'Azure subscription 1(d869cbf8-8990-4e0b-94ca-9ec4e5ee2463)'
                 appType: 'webAppLinux'
-                appName: 'flask-ml-azure'
-                package: '/$(System.DefaultWorkingDirectory)/$(Build.BuildId)-fakerestapi.zip'
+                appName: $(applicationname)
+                package: '$(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip'
                 deploymentMethod: 'auto'
 
     - deployment: VirtualMechnDeploy
