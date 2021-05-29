@@ -151,9 +151,8 @@ stages:
                 targetType: 'inline'
                 script: |
                   # Write your commands here
-                  
                   ls
-                workingDirectory: '/$(System.DefaultWorkingDirectory)/'
+                workingDirectory: '/home/vsts/work/1/s/'
             - task: AzureWebApp@1
               displayName: 'Deploy Azure Web App'
               inputs:
