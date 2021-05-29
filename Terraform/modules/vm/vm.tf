@@ -9,7 +9,7 @@ provider "azurerm" {
 }
 data "azurerm_image" "packer-image" {
   name                = "myPackerImage"
-  resource_group_name = var.packer_resource_group
+  resource_group_name = "proj3-packerIMG"
 }
 
   resource "azurerm_network_interface" "test" {
