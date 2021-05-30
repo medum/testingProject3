@@ -245,6 +245,7 @@ AppServiceHTTPLogs
 SELENIUM_LOGS_CL
 After some minutes ( 3 to 10 minutes) , check the email configured since an alert message will be received. and also check the Log Analytics Logs , so you can get visualize the logs and analyze with more detail.
 ![image](https://user-images.githubusercontent.com/49653011/119434903-20e0c200-bce7-11eb-8b26-a8cd6f714057.png)
+![image](https://user-images.githubusercontent.com/49653011/120093185-77cf0880-c0e6-11eb-8af7-9026dac3bd38.png)
 
 
 Clean it Up
