@@ -1,4 +1,4 @@
 resource "azurerm_resource_group" "test" {
-  name     = "test-rg-proj3"
+  name     = var.resource_group"
   location = var.location
 }
