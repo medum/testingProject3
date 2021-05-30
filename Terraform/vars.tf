@@ -19,6 +19,10 @@ variable "tenant_id" {
   default = "19cf5455-841e-4591-9654-f8b08846a572"
   description = "Mention the Azure Tenant ID"
 }
+variable "network-subnet-cidr" {
+  type        = string
+  description = "The CIDR for the network subnet"
+}
 
 
 ##############################
