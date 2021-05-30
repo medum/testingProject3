@@ -141,7 +141,7 @@ stages:
     - deployment: FakeRestAPIDeploy
       pool:
         vmImage: 'Ubuntu-18.04'
-      environment: 'WEBAPP-TEST'
+      environment: 'VM-TEST'
       strategy:
         runOnce:
           deploy:
@@ -167,7 +167,7 @@ stages:
           vmImage: 'Ubuntu-18.04'
       displayName: CICD Deploy
       environment:
-        name:  'WEBAPP-TEST'
+        name:  'VM-TEST'
         resourceType: VirtualMachine
       strategy:
         runOnce:
@@ -333,7 +333,7 @@ stages:
     - deployment: VMRunUITests
       displayName: Run UI Tests
       environment:
-        name:  'WEBAPP-TEST'
+        name:  'VM-TEST'
         resourceType: VirtualMachine
       strategy:
         runOnce:
