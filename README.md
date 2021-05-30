@@ -207,6 +207,14 @@ In the azure portal go to the app service > Alerts > New Alert Rule. Add an HTTP
 ![image](https://user-images.githubusercontent.com/49653011/119723369-5bf40a00-be3b-11eb-80da-793a1f1a1af6.png)
 ![image](https://user-images.githubusercontent.com/49653011/119729943-3408a480-be43-11eb-8766-1958e72b9f74.png)
 ![image](https://user-images.githubusercontent.com/49653011/119730168-6914f700-be43-11eb-93f0-9b81eb92f04a.png)
+![image](https://user-images.githubusercontent.com/49653011/120092648-903d2400-c0e2-11eb-9f2f-bcf90d5934fc.png)
+![image](https://user-images.githubusercontent.com/49653011/120092679-df835480-c0e2-11eb-8257-ab07468f4d76.png)
+![image](https://user-images.githubusercontent.com/49653011/120092880-39384e80-c0e4-11eb-90f6-374ef9e59b1f.png)
+![image](https://user-images.githubusercontent.com/49653011/120092914-78ff3600-c0e4-11eb-816e-94c7ec8a0032.png)
+![image](https://user-images.githubusercontent.com/49653011/120092917-81577100-c0e4-11eb-8c7d-cf10763d2238.png)
+![image](https://user-images.githubusercontent.com/49653011/120093000-3427cf00-c0e5-11eb-95b1-6e074bde461a.png)
+![image](https://user-images.githubusercontent.com/49653011/120093080-cd56e580-c0e5-11eb-89df-2cbb61631fc1.png)
+
 
 
 Go to the App service > Diagnostic Settings > + Add Diagnostic Setting. Tick AppServiceHTTPLogs and Send to Log Analytics Workspace created on step above and Save.
