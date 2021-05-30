@@ -91,13 +91,13 @@ stages:
             backendAzureRmKey: 'tfstate'
             workingDirectory: '$(System.DefaultWorkingDirectory)/Terraform'
             
-        - task: TerraformTaskV2@2
-          displayName: "Terraform apply"
-          inputs:
-            provider: 'azurerm'
-            command: 'apply'
-            workingDirectory: '$(System.DefaultWorkingDirectory)/Terraform'
-            environmentServiceNameAzureRM: 'CICDPipeline'
+        # - task: TerraformTaskV2@2
+        #   displayName: "Terraform apply"
+        #   inputs:
+        #     provider: 'azurerm'
+        #     command: 'apply'
+        #     workingDirectory: '$(System.DefaultWorkingDirectory)/Terraform'
+        #     environmentServiceNameAzureRM: 'CICDPipeline'
 
         - task: ArchiveFiles@2
           displayName: "Archive FakeRestAPI"
